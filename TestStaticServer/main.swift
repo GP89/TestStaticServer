@@ -6,6 +6,18 @@
 //
 
 import Foundation
+import Vapor
 
-print("Hello, World!")
+func main() throws {
+	
+	let environment = try Environment.detect()
+	let app = Application(environment)
+	defer { app.shutdown() }
+	
+	StaticServer.shared.setup(withApp: app)
+	
+	try app.run()
+	
+}
 
+try main()

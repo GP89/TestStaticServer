@@ -8,10 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		DA5872BA28A7BC6C0013E093 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5872B928A7BC6C0013E093 /* main.swift */; };
+		DA5872C128A7BCA10013E093 /* StaticServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5872C028A7BCA00013E093 /* StaticServer.swift */; };
+		DA5872C428A7C5270013E093 /* Vapor in Frameworks */ = {isa = PBXBuildFile; productRef = DA5872C328A7C5270013E093 /* Vapor */; };
+		DA5872CE28A7CC180013E093 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5872CD28A7CC180013E093 /* main.m */; };
+		DA5872D428A7CCC80013E093 /* PWDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5872D328A7CCC80013E093 /* PWDownloader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		DA5872B428A7BC6C0013E093 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		DA5872C928A7CC180013E093 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -25,10 +38,23 @@
 /* Begin PBXFileReference section */
 		DA5872B628A7BC6C0013E093 /* TestStaticServer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestStaticServer; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5872B928A7BC6C0013E093 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		DA5872C028A7BCA00013E093 /* StaticServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticServer.swift; sourceTree = "<group>"; };
+		DA5872CB28A7CC180013E093 /* Downloader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Downloader; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA5872CD28A7CC180013E093 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DA5872D228A7CC3B0013E093 /* PWDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PWDownloader.h; sourceTree = "<group>"; };
+		DA5872D328A7CCC80013E093 /* PWDownloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PWDownloader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DA5872B328A7BC6C0013E093 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA5872C428A7C5270013E093 /* Vapor in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA5872C828A7CC180013E093 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				DA5872B828A7BC6C0013E093 /* TestStaticServer */,
+				DA5872CC28A7CC180013E093 /* Downloader */,
 				DA5872B728A7BC6C0013E093 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				DA5872B628A7BC6C0013E093 /* TestStaticServer */,
+				DA5872CB28A7CC180013E093 /* Downloader */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,8 +86,19 @@
 			isa = PBXGroup;
 			children = (
 				DA5872B928A7BC6C0013E093 /* main.swift */,
+				DA5872C028A7BCA00013E093 /* StaticServer.swift */,
 			);
 			path = TestStaticServer;
+			sourceTree = "<group>";
+		};
+		DA5872CC28A7CC180013E093 /* Downloader */ = {
+			isa = PBXGroup;
+			children = (
+				DA5872CD28A7CC180013E093 /* main.m */,
+				DA5872D228A7CC3B0013E093 /* PWDownloader.h */,
+				DA5872D328A7CCC80013E093 /* PWDownloader.m */,
+			);
+			path = Downloader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,8 +117,28 @@
 			dependencies = (
 			);
 			name = TestStaticServer;
+			packageProductDependencies = (
+				DA5872C328A7C5270013E093 /* Vapor */,
+			);
 			productName = TestStaticServer;
 			productReference = DA5872B628A7BC6C0013E093 /* TestStaticServer */;
+			productType = "com.apple.product-type.tool";
+		};
+		DA5872CA28A7CC180013E093 /* Downloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA5872CF28A7CC180013E093 /* Build configuration list for PBXNativeTarget "Downloader" */;
+			buildPhases = (
+				DA5872C728A7CC180013E093 /* Sources */,
+				DA5872C828A7CC180013E093 /* Frameworks */,
+				DA5872C928A7CC180013E093 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Downloader;
+			productName = Downloader;
+			productReference = DA5872CB28A7CC180013E093 /* Downloader */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -95,6 +154,9 @@
 					DA5872B528A7BC6C0013E093 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
+					DA5872CA28A7CC180013E093 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 				};
 			};
 			buildConfigurationList = DA5872B128A7BC6C0013E093 /* Build configuration list for PBXProject "TestStaticServer" */;
@@ -106,11 +168,15 @@
 				Base,
 			);
 			mainGroup = DA5872AD28A7BC6C0013E093;
+			packageReferences = (
+				DA5872C228A7C5270013E093 /* XCRemoteSwiftPackageReference "vapor" */,
+			);
 			productRefGroup = DA5872B728A7BC6C0013E093 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				DA5872B528A7BC6C0013E093 /* TestStaticServer */,
+				DA5872CA28A7CC180013E093 /* Downloader */,
 			);
 		};
 /* End PBXProject section */
@@ -120,7 +186,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA5872C128A7BCA10013E093 /* StaticServer.swift in Sources */,
 				DA5872BA28A7BC6C0013E093 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA5872C728A7CC180013E093 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA5872CE28A7CC180013E093 /* main.m in Sources */,
+				DA5872D428A7CCC80013E093 /* PWDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +253,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -231,7 +307,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -258,6 +334,22 @@
 			};
 			name = Release;
 		};
+		DA5872D028A7CC180013E093 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DA5872D128A7CC180013E093 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -279,7 +371,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		DA5872CF28A7CC180013E093 /* Build configuration list for PBXNativeTarget "Downloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA5872D028A7CC180013E093 /* Debug */,
+				DA5872D128A7CC180013E093 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DA5872C228A7C5270013E093 /* XCRemoteSwiftPackageReference "vapor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vapor/vapor.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DA5872C328A7C5270013E093 /* Vapor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA5872C228A7C5270013E093 /* XCRemoteSwiftPackageReference "vapor" */;
+			productName = Vapor;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DA5872AE28A7BC6C0013E093 /* Project object */;
 }
